@@ -5,31 +5,33 @@
 //  Created by Alvin Matthew Pratama on 22/03/25.
 //
 
-import Foundation
-import SwiftUI
 import Combine
+import SwiftUI
 
 public struct EBImage: View {
     public let url: URL?
     public var contentMode: ContentMode = .fit
     
     @StateObject
-    private var loader = AsyncImageLoader()
+    private var loader = EBImageLoader()
 
     public var body: some View {
         Group {
-            if let image = loader.image {
+            switch loader.state {
+            case .loading:
+                ProgressView()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                
+            case let .success(image):
                 Image(uiImage: image)
                     .resizable()
                     .aspectRatio(contentMode: contentMode)
-            } else if loader.failed {
+                
+            case .failure:
                 Image(systemName: "xmark.octagon.fill")
                     .resizable()
                     .scaledToFit()
                     .foregroundColor(.gray)
-            } else {
-                ProgressView()
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
         }
         .onAppear {
@@ -60,51 +62,5 @@ public struct EBImage: View {
         image
             .resizable()
             .aspectRatio(contentMode: contentMode)
-    }
-}
-
-fileprivate final class AsyncImageLoader: ObservableObject {
-    @Published var image: UIImage?
-    @Published var failed = false
-    private var cancellable: AnyCancellable?
-
-    internal func load(from url: URL) {
-        if let cached = ImageCacheManager.shared.image(for: url) {
-            self.image = cached
-            return
-        }
-
-        cancellable = URLSession.shared.dataTaskPublisher(for: url)
-            .map { data, _ in UIImage(data: data) }
-            .handleEvents(receiveOutput: { [weak self] in
-                self?.failed = $0 == nil
-            })
-            .replaceError(with: nil)
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] image in
-                guard let self, let image, let url = URL(string: url.absoluteString) else { return }
-                ImageCacheManager.shared.insert(image, for: url)
-                self.image = image
-            }
-    }
-
-    internal func cancel() {
-        cancellable?.cancel()
-    }
-}
-
-fileprivate final class ImageCacheManager {
-    internal static let shared = ImageCacheManager()
-    
-    private let cache = NSCache<NSURL, UIImage>()
-    
-    private init() {}
-    
-    internal func image(for url: URL) -> UIImage? {
-        cache.object(forKey: url as NSURL)
-    }
-    
-    internal func insert(_ image: UIImage, for url: URL) {
-        cache.setObject(image, forKey: url as NSURL)
     }
 }
