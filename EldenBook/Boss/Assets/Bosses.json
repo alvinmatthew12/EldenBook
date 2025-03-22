@@ -1,0 +1,93 @@
+[
+    {
+        "id": "1",
+        "name": "Malenia, Blade of Miquella",
+        "image_url": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/shardbearer_malenia.png",
+        "description": "Malenia is a demigod and twin sister to Miquella, known for her unmatched swordsmanship and the Scarlet Rot affliction.",
+        "location": "Elphael, Brace of the Haligtree"
+    },
+    {
+        "id": "2",
+        "name": "Maliketh, the Black Blade",
+        "image_url": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/maliketh_the_black_blade.png",
+        "description": "Maliketh serves as the guardian of Destined Death and wields the power of the Black Blade, embodying the shadow of the Golden Order.",
+        "location": "Crumbling Farum Azula"
+    },
+    {
+        "id": "3",
+        "name": "Starscourge Radahn",
+        "image_url": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/shardbearer_radahn.png",
+        "description": "Radahn, a demigod and master of gravitational magic, is known for halting the stars and his colossal stature.",
+        "location": "Caelid - Redmane Castle"
+    },
+    {
+        "id": "4",
+        "name": "Rennala, Queen of the Full Moon",
+        "image_url": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/rennala,_queen_of_the_full_moon.png",
+        "description": "Rennala is the head of the Carian Royal Family and a master sorceress, residing within the Academy of Raya Lucaria.",
+        "location": "Academy of Raya Lucaria"
+    },
+    {
+        "id": "5",
+        "name": "Morgott, the Omen King",
+        "image_url": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/shardbearer_morgott.png",
+        "description": "Morgott is a demigod shunned due to his Omen heritage, guarding the Erdtree with fierce determination.",
+        "location": "Leyndell, Royal Capital"
+    },
+    {
+        "id": "6",
+        "name": "Mohg, Lord of Blood",
+        "image_url": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/shardbearer_mohg.png",
+        "description": "Mohg is a demigod who commands the power of blood and seeks to establish his own dynasty.",
+        "location": "Mohgwyn Palace"
+    },
+    {
+        "id": "7",
+        "name": "Godfrey, First Elden Lord",
+        "image_url": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/godfrey_the_first_lord.png",
+        "description": "Godfrey was the first Elden Lord and a formidable warrior, now returning to challenge the Tarnished.",
+        "location": "Leyndell, Royal Capital"
+    },
+    {
+        "id": "8",
+        "name": "Godrick the Grafted",
+        "image_url": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/shardbearer_godrick.png",
+        "description": "Godrick is a demigod who grafts the limbs of his foes onto himself to gain power, ruling over Stormveil Castle.",
+        "location": "Stormveil Castle"
+    },
+    {
+        "id": "9",
+        "name": "Dragonlord Placidusax",
+        "image_url": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/dragonlord_placidusax.png",
+        "description": "Placidusax is an ancient dragonlord awaiting the return of his god, embodying the power of storms.",
+        "location": "Crumbling Farum Azula"
+    },
+    {
+        "id": "10",
+        "name": "Rykard, Lord of Blasphemy",
+        "image_url": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/shardbearer_rykard.png",
+        "description": "Rykard is a demigod who merged with the God-Devouring Serpent, seeking greater power through blasphemy.",
+        "location": "Mt. Gelmir - Volcano Manor"
+    },
+    {
+        "id": "11",
+        "name": "Fire Giant",
+        "image_url": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/fire_giant_trophy.png",
+        "description": "The Fire Giant is the last of his kind, guarding the Flame of Ruin with his massive strength.",
+        "location": "Mountaintops of the Giants"
+    },
+    {
+        "id": "12",
+        "name": "Lichdragon Fortissax",
+        "image_url": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/lichdragon_fortissax.png",
+        "description": "Fortissax is an ancient dragon corrupted by death, wielding powerful lightning attacks.",
+        "location": "Deeproot Depths"
+    },
+    {
+        "id": "13",
+        "name": "Commander Niall",
+        "image_url": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/commander_niall.png",
+        "description": "Commander Niall is a veteran soldier who utilizes frost and lightning attacks, commanding spectral knights.",
+        "location": "Castle Sol"
+    }
+]

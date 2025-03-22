@@ -5,6 +5,7 @@
 //  Created by Alvin Matthew Pratama on 22/03/25.
 //
 
+import SwiftUI
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -16,7 +17,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+        window?.windowScene = windowScene
+        
+        let rootView = NavigationView {
+            BossListView()
+        }
+        window?.rootViewController = UIHostingController(rootView: rootView)
+        window?.overrideUserInterfaceStyle = .dark
+        window?.makeKeyAndVisible()
+        
+//        let appearance = UINavigationBarAppearance()
+//        appearance.configureWithOpaqueBackground()
+//        appearance.backgroundColor = UIColor(red: 10/255, green: 10/255, blue: 10/255, alpha: 1) // base
+//        appearance.titleTextAttributes = [.foregroundColor: UIColor(red: 137/255, green: 120/255, blue: 89/255, alpha: 1)] // primary
+//        appearance.largeTitleTextAttributes = appearance.titleTextAttributes
+//
+//        UINavigationBar.appearance().standardAppearance = appearance
+//        UINavigationBar.appearance().scrollEdgeAppearance = appearance
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
