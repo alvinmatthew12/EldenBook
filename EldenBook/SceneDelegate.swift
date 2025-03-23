@@ -20,11 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        
-        let rootView = NavigationView {
-            BossListView()
-        }
-        window?.rootViewController = UIHostingController(rootView: rootView)
+        window?.rootViewController = UINavigationController(rootViewController: HomeViewController())
         window?.overrideUserInterfaceStyle = .dark
         window?.makeKeyAndVisible()
         

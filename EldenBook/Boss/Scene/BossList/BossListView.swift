@@ -87,7 +87,7 @@ internal struct BossListView: View {
                     await viewModel.send(.loadData)
                 }
                 .navigationDestination(item: $selectedBossID) { bossID in
-                    BossView(bossID: bossID)
+                    BossDetailView(bossID: bossID)
                 }
         }
     }

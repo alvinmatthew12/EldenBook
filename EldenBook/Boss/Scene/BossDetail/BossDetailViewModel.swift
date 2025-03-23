@@ -1,5 +1,5 @@
 //
-//  BossViewModel.swift
+//  BossDetailViewModel.swift
 //  EldenBook
 //
 //  Created by Alvin Matthew Pratama on 22/03/25.
@@ -7,7 +7,7 @@
 
 import Combine
 
-internal class BossViewModel: ViewModel {
+internal class BossDetailViewModel: ViewModel {
     internal enum ViewState: Equatable {
         case loading
         case error(NetworkError)

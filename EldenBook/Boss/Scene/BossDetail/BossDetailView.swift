@@ -1,5 +1,5 @@
 //
-//  BossView.swift
+//  BossDetailView.swift
 //  EldenBook
 //
 //  Created by Alvin Matthew Pratama on 22/03/25.
@@ -7,15 +7,15 @@
 
 import SwiftUI
 
-internal struct BossView: View {
+internal struct BossDetailView: View {
     @StateObject
-    private var viewModel: BossViewModel
+    private var viewModel: BossDetailViewModel
     
     @Environment(\.dismiss)
     private var dismiss
     
     internal init(bossID: String) {
-        _viewModel = StateObject(wrappedValue: BossViewModel(
+        _viewModel = StateObject(wrappedValue: BossDetailViewModel(
             bossID: bossID,
             useCase: BossUseCase()
         ))
@@ -77,12 +77,7 @@ internal struct BossView: View {
         NavigationStack {
             ZStack(alignment: .topLeading) {
                 contentView
-                    .task {
-                        await viewModel.send(.loadData)
-                    }
-                    .toolbarBackground(.hidden, for: .navigationBar)
                     .ignoresSafeArea(.container, edges: .top)
-                    .navigationBarBackButtonHidden(true)
                 
                 Button(action: { dismiss() }) {
                     Image(systemName: "chevron.left")
@@ -97,10 +92,15 @@ internal struct BossView: View {
             }
             .background(Color.base)
         }
+        .toolbarBackground(.hidden, for: .navigationBar)
+        .navigationBarBackButtonHidden(true)
+        .task {
+            await viewModel.send(.loadData)
+        }
     }
 }
 
 #Preview {
-    BossView(bossID: "1")
+    BossDetailView(bossID: "1")
         .preferredColorScheme(.dark)
 }

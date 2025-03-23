@@ -16,7 +16,16 @@ public final class EBImageLoader: ObservableObject {
         case failure
     }
     
-    @Published var state: State = .loading
+    @Published var state: State = .loading {
+        didSet {
+            stateSubject.send(state)
+        }
+    }
+    
+    private let stateSubject = CurrentValueSubject<State, Never>(.loading)
+    public var statePublisher: AnyPublisher<State, Never> {
+        stateSubject.eraseToAnyPublisher()
+    }
     
     private var cancellable: AnyCancellable?
 
